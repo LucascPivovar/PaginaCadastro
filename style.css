@@ -2,7 +2,13 @@ body, html {
     margin: 0;
     padding: 0;
 }
-
+input[type="file"] {
+    position: relative;
+    width: 100%; /* Mantém a largura */
+    height: 2em; /* Mantém a altura */
+    cursor: pointer;
+    text-indent: -9999px; /* Move o texto do nome do arquivo para fora da área visível */
+}
 @media screen and (max-width: 380px) {
     .page1 {
         width: 100vw;
@@ -429,12 +435,99 @@ body, html {
 
     
 
+
     .images {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
 
+    #foto {
+        height: 2em;
+        width: 88%;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2em;
+        color: black;
+        border: none;
+        background-color: #D9D9D9;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        padding: 5px;
+        position: relative;
+        right: 20px;
+    }
+
+    .images label {
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        color: rgba(71, 51, 52, 1);
+        font-weight: 700;
+        margin: 5px;
+        margin-top: 1em;
+    }
+
+    .images input {
+        height: 2em;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2em;
+        color: #000000;
+        text-align: center;
+        align-self: center;
+        border: none;
+        background-color: #D9D9D9;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        margin-right: 2.5em;
+        width: 19em;
+    }  
+    /* Estilos para centralizar as imagens */
+    .image-preview {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin: 10px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+    
+    #preview-foto1-container, #preview-foto2-container {
+        display: flex;
+        justify-content: center; /* Centraliza as imagens únicas */
+        align-items: center;
+    }
+    
+    #previewCasalContainer {
+        display: flex;
+        justify-content: center; /* Centraliza as imagens múltiplas */
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap; /* Para que as imagens múltiplas fiquem em várias linhas, se necessário */
+    }
+    
+    #previewCasalContainer img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+    
+    #previewCasalContainer {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    #previewCasalContainer img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid #ccc;
+    }
     #foto {
         height: 2em;
         width: 88%;
@@ -739,8 +832,38 @@ body, html {
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         margin: 10px;
+        margin-right: 2.5em;
+        width: 19em;
+    }  .image-preview {
+        display: none; /* Oculto até que uma imagem seja carregada */
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        object-fit: cover; /* Ajusta a imagem ao tamanho da caixa */
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
+    .image-preview {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+    }
+    
+    #previewCasalContainer {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    #previewCasalContainer img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid #ccc;
+    }
     h3{
         font-family: 'Inter', sans-serif;
         font-size: 20px;
@@ -783,6 +906,7 @@ body, html {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); 
         margin: 10px;
         resize: none;
+        margin-right: 2em;
     }
         
     #finalizar:hover {

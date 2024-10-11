@@ -5,91 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <article>
+        <section class="page1"> 
+            <div class="geral1">    
+                <form method="post">
+                    <h1>Cadastro</h1>
+                    <div class="part-one">
+                        <label for="name" id="nomelabe">Nome do casal:</label>
+                        <input type="text" id="name-married" name="nome" required>
+                        <p>(apelidos ou nomes)</p>
 
-        <article>
-            <section class="page1"> 
-                <div class="geral1">    
-                    <form method="post">
-                        <h1>Cadastro</h1>
-                        <div class="part-one">
-                            <label for="name" id="nomelabe">Nome do casal:</label>
-                            <input type="text" id="name-married" name="nome" required>
-                            <p>(apelidos ou nomes)</p>
+                        <label for="Data Inicial" id="data">Data inicial:</label>
+                        <input type="date" id="InputOne" name="Data Inicial" class="data" required>
+                        <p>(Primeiro, encontro,<br> namoro, casamento)</p>
+
+                        <label for="Escolha 6 músicas:">Escolha 6 músicas</label>
+                        <textarea name="Escolha 6 musicas" rows="5" cols="30" id="music" required></textarea>
+                        <p>(A primeira será <br>destacada)</p>
+                    </div>
+
+                    <label for="nameOne" id="nome1">Nome pessoa 1:</label>
+                    <input type="text" id="name-one" name="nameOne" required>
+
+                    <label for="nameOne" id="nome2">Nome pessoa 2:</label>
+                    <input type="text" id="name-one" name="nameTwo" required>
+                    <!-- Uploads de imagens -->
+                    <div class="images">
+                        <!-- Foto pessoa 1 -->
+                        <label for="foto1">Foto pessoa 1</label>
+                        <input type="file" id="foto1" name="foto1" accept="image/*" required>
+                        <div id="preview-foto1-container"></div> <!-- Container da pré-visualização -->
+
+                        <!-- Foto pessoa 2 -->
+                        <label for="foto2">Foto pessoa 2</label>
+                        <input type="file" id="foto2" name="foto2" accept="image/*" required>
+                        <div id="preview-foto2-container"></div> <!-- Container da pré-visualização -->
+
+                        <!-- Fotos do casal -->
+                        <label for="fotosCasal">De 4 a 6 fotos do casal</label>
+                        <input type="file" id="fotosCasal" name="fotosCasal" accept="image/*" multiple required>
+                        <div id="previewCasalContainer"></div> <!-- Container para as miniaturas das imagens -->
+                    </div>
             
-                            <label for="Data Inicial" id="data">Data inicial:</label>
-                            <input type="date" id="InputOne" name="Data Inicial" class="data">
-                            <p>(Primeiro, encontro,<br> namoro, casamento)</p>
-            
-                            <label for="Escolha 6 músicas:">Escolha 6 músicas</label>
-                            <textarea  name="Escolha 6 musicas"  rows="5" cols="30" id="music"  placeholder="1 - Baby (Gal costa)&#10;2 - Oceano (Djavan)&#10;3 - Ser sua (Flora Matos)&#10;4 - Seu (Sant)&#10;5 - Crystal (Froid)"></textarea>
-                            <p>(A primeira será <br>destacada)</p>
-                        </div>
+                    <h3>Mensagem final</h3>
+                    <textarea name="mensagem" rows="50" cols="300" id="final" style="resize: none;"></textarea>
 
-                           
-                        <label for="nameOne" id="nome1">Nome pessoa 1:</label>
-                        <input type="text" id="name-one" name="nameOne">
-                        <label for="characteristicsOne" id="caracteristicas1">Características pessoa 1:</label>
-                        <div class="characteristics">
+                    <button id="finalizar" type="submit">Finalizar</button>
+                </form>
+            </div>
+        </section>
+    </article>
 
-                            <div class="characteristicsOne">
-                                <input type="text" name="charOne" id="CharOne">
-                                <input type="text" name="charTwo" id="charTwo">
-                            </div>
-                            <div class="characteristicsTwo">
-                                
-                                <input type="text" name="charThree" id="charThree">
-                                <input type="text" name="charFour" id="charFour">
-                            </div>
-                        </div>
-
-                        <label for="nameOne" id="nome1">Nome pessoa 2:</label>
-                        <input type="text" id="name-one" name="nameOne">
-                        <label for="characteristicsOne" id="caracteristicas1">Características pessoa 2:</label>
-                        <div class="characteristics">
-
-                            <div class="characteristicsOne">
-                                <input type="text" name="charOne" id="CharOne">
-                                <input type="text" name="charTwo" id="charTwo">
-                            </div>
-                            <div class="characteristicsTwo">
-                                
-                                <input type="text" name="charThree" id="charThree">
-                                <input type="text" name="charFour" id="charFour">
-                            </div>
-                        </div>
-                        <p>Signos, idade, melhor em .. Deixe a <br>criatividade solta</p>
-
-                        <div class="images">
-                            <label for="foto">Foto pessoa 1</label>
-                            <input type="file" id="foto" name="foto" accept="image/*">
-                            
-
-                            
-                            <label for="foto">Foto pessoa 2</label>
-                            <input type="file" id="foto" name="foto" accept="image/*">
-
-                            
-                            <label for="foto">De 4 a 6 fotos do casal</label>
-                            <input type="file" id="foto" name="foto" accept="image/*">
-
-
-                        </div>
-                       
-                        <h3>Mensagem final</h3>
-                        <textarea name="mensagem" rows="50" cols="300" id="final" style="resize: none;">
-
-                        </textarea>
-
-                        <button id="finalizar" type="submit">Finalizar</button>
-
-                    </form>
-                </div>
-            </section>
-        </article>
-       
-    
+    <script src="script.js"></script>
 </body>
 </html>
